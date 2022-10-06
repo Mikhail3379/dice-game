@@ -1,1 +1,0 @@
-const player = require('./module');
