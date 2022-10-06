@@ -49,7 +49,7 @@ btnRoll.addEventListener('click', function () {
 
     // 2. Display dice
     diceEl.classList.remove('hidden');
-    diceEl.src = `dice-${dice}.png`;
+    diceEl.src = `images/dice-${dice}.png`;
 
     // 3. Check for rolled 1
     if (dice !== 1) {
@@ -65,6 +65,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
  const saveGame = () => {
+  alert('Game Saved');
   const name1 = document.getElementById('nameA').value;
   const name2 = document.getElementById('nameB').value;
   const score1 = document.getElementById('score--0').value;
