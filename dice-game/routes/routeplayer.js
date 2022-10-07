@@ -4,10 +4,12 @@ const Player = require('../models/player');
 
 
 
-router.post("/players", (req, res) => {
+router.post("/addPlayer", (req, res) => {
   const newPlayer = new Player({
-    name: req.body.name,
-    score: req.body.score,
+    name1: req.body.name,
+    score1: req.body.score,
+    name2: req.body.name,
+    score2: req.body.score
   });
 
   newPlayer.save().then(document => {
