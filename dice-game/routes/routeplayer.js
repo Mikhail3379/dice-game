@@ -6,10 +6,10 @@ const Player = require('../models/player');
 
 router.post("/addPlayer", (req, res) => {
   const newPlayer = new Player({
-    name1: req.body.name,
-    score1: req.body.score,
-    name2: req.body.name,
-    score2: req.body.score
+    name1: req.body.name1,
+    score1: req.body.score1,
+    name2: req.body.name2,
+    score2: req.body.score2
   });
 
   newPlayer.save().then(document => {
@@ -35,8 +35,10 @@ router.get("/getplayer", (req, res) => {
 router.put('/update/:id', (req, res, next) => {
   const newplayer = { _id: req.params.id };
   Player.updateOne(newplayer, {
-    name: req.body.name,
-    score: req.body.score
+    name1: req.body.name1,
+    score1: req.body.score1,
+    name2: req.body.name2,
+    score2: req.body.score2
   }).then(doc => {
     if (!doc) {
       return res.st(404).end();
