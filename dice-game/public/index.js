@@ -64,34 +64,31 @@ btnRoll.addEventListener('click', function () {
     }
   }
 });
- const saveGame = () => {
+  const saveGame = () => {
   alert('Game Saved');
   const name1 = document.getElementById('nameA').value;
   const name2 = document.getElementById('nameB').value;
   const score1 = document.getElementById('score--0').value;
   const score2 = document.getElementById('score--1').value;
-  const url = 'mongodb://127.0.0.1:27017/players/player';
+  const url = 'http://localhost:3000/player/addPlayer';
    fetch(url, {
     method: 'POST',
-    body: JSON.stringify({
-      name: name1,
-      score: score1,
-    }),
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(response => response.json());
-  fetch(url, {
-    method: 'POST',
     body: JSON.stringify({
-      name: name2,
-      score: score2,
+      name1: name1,
+      score1: score1,
+      name2: name2,
+      score2: score2
+
     }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  
   }).then(response => response.json());
-}
+};
+
+
+
 
 
 
